@@ -58,7 +58,9 @@ app.get('/',(req, res)=>{
 
 app.use("/api/v1", indexRouter);
 
-
+app.use('*', (req, res) => {
+  res.status(404).json({ error: 'Not Found' });
+});
 
 setupSocket(io);
 

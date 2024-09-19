@@ -72,7 +72,7 @@ const googleLogin = TryCatch(async (req, res, next) => {
 
   const notAgoogleUser = await User.findOne({ username: email, "googledetails.googlelogin": false,
     "googledetails.email": { $ne: email } });
-    console.log('not a google user',notAgoogleUser);
+    // console.log('not a google user',notAgoogleUser);
     
   if (notAgoogleUser){
     
